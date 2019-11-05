@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication table</title>
+</head>
+<body>
+<style type="text/css">
+	legend{background-color: #ccc;
+		font-size: 25px;
+		color: blue;
+
+	}
+	fieldset{
+		background-color: #6c757d;
+		color: blue;
+	}
+	button{
+		border-radius: 8%;
+		color: blue;
+		font-size: 20px;
+		width: 10%;
+		height: 30px;
+		background-color: #ccc;
+	}
+	#got{
+		background-color: blue;
+		color: white;
+
+		
+	}
+</style>
+ 
+<center>
+	<fieldset>
+		<legend>Multiplication Table</legend>
+		Columns:<input type="number" id="col"><br><br>
+		Rows:<input type="number" id="row" name="row"><br></br><br>
+		<button onclick="display()">Display</button><br><br><br>
+	</fieldset>
+</center>
+<div id="got"></div>
+<script type="text/javascript">
+
+	col.focus();
+
+
+	function display(){
+		col.focus();
+		var y="";
+		y+= "<table border=1;><tr><td>";
+		for(i=1; i<=col.value;i++){
+			y+="<td style= 'min-width: 70px'>";
+			y+=i+"Times";
+			y+="<table border=1;>";
+			for(V=1;V<=row.value;V++)
+			{
+
+				y+="<tr><td>"+i+"X"+V+"="+i*V+"</td></tr>";
+		}y+="</table>";
+	}y+="</td></tr></table>";
+
+	got.innerHTML= y;
+}
+</script>
+</body>
+</html>
